@@ -25,4 +25,17 @@ describe('ColorPicker', () => {
 
     expect(bgColor).toHaveStyle({ backgroundColor: '#FFFFFF' });
   });
+
+  it('redos a color change', async() => {
+    const color = screen.getByLabelText('Change Color');
+    const bgColor = screen.getByTestId('display');
+    const undo = screen.getByText('undo');
+    const redo = screen.getByText('redo');
+
+    fireEvent.change(color, { target: { value: '#000000' } });
+    fireEvent.click(undo);
+    fireEvent.click(redo);
+
+    expect(bgColor).toHaveStyle({ backgroundColor: '#000000' });
+  });
 });
