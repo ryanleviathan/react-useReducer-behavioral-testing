@@ -25,6 +25,7 @@ function App() {
         onClick={handleChange}>
           redo
       </button>
+      <label htmlFor="changeColor">Color Changer</label>
       <input 
         id="INPUT" 
         type="color" 
@@ -32,7 +33,7 @@ function App() {
         onChange={handleChange} />
       <div 
         data-testid="display" 
-        style={{ backgroundColor: state.current }}>
+        style={{ bg: state.current }}>
       </div>
     </>
   );
