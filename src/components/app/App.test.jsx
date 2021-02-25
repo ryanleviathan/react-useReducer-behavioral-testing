@@ -8,10 +8,10 @@ describe('ColorPicker', () => {
   });
 
   it('changes bg color', async() => {
-    const color = screen.getByLabelText('Color Changer');
+    const color = screen.getByLabelText('Change Color');
     const bgColor = screen.getByTestId('display');
 
     fireEvent.change(color, { target: { value: '#000000' } });
-    expect(bgColor).toHaveStyle({ bg: '#000000' });
+    expect(bgColor).toHaveStyle({ backgroundColor: '#000000' });
   });
 });

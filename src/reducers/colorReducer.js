@@ -19,7 +19,7 @@ export default function reducer(state, action) {
         current: after[0],
         after: after.slice(1)
       };
-    case 'INPUT':
+    case 'changeColor':
       return {
         ...state,
         before: [...before, current],
